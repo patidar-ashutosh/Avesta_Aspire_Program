@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Task</title>
+</head>
+<body>
+
+    <script>
+        // question : What is the result? Why?
+        let arr = ["a", "b"];
+
+        arr.push(function() {
+            alert( this );
+        });
+
+        arr[2](); // ?
+
+        // answer
+        // it's show the a, b and function becuase this is point the object.
+        // so the array values a and b plus the function which we can add in array using push is added in 2nd index
+        // now array have 3 values -> a, b and function
+    </script>
+    
+</body>
+</html>

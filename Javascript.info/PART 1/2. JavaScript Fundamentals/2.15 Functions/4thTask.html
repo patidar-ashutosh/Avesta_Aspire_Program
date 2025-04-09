@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Task</title>
+</head>
+<body>
+
+    <script>
+        // question : Write a function pow(x,n) that returns x in power n. Or, in other words, multiplies x by itself n times and returns the result.
+
+        function pow(a, b){
+            let ans = 1;
+            for(let i=1; i<=b; i++){
+                ans = ans * a;
+            }
+            return ans;
+        }
+
+        alert(pow(3, 2)); // 3 * 3 = 9
+        alert(pow(3, 3)); // 3 * 3 * 3 = 27
+        alert(pow(1, 100)); // 1 * 1 * ...* 1 = 1
+
+        let valueOfX = +prompt("Enter the value of X", 1);
+        let valueOfN = +prompt("Enter the value of N", 1);
+
+        alert(pow(valueOfX, valueOfN));
+    </script>
+    
+</body>
+</html>

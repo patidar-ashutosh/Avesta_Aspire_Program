@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Task</title>
+</head>
+<body>
+
+    <script>
+        async function loadJson(url) {
+            let response = await fetch(url);
+            try {
+                if(response.status == 200){
+                return await response.json();
+                } else {
+                    throw new Error(response.status);
+                }
+            }
+            catch(err){
+                alert(err);
+            }
+        }
+
+        loadJson('https://javascript.info/no-such-user.json');
+    </script>
+
+</body>
+</html>

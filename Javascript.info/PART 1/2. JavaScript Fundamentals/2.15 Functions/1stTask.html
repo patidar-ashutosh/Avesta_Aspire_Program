@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Task</title>
+</head>
+<body>
+
+    <script>
+        function checkAge(age) {
+            if (age > 18) {
+                return true;
+            } else {
+                // ...
+                return confirm('Did parents allow you?');
+            }
+        }
+        // Will the function work differently if else is removed?
+        function checkAge(age) {
+            if (age > 18) {
+                return true;
+            }
+            // ...
+            return confirm('Did parents allow you?');
+        }
+
+        // question : Is there any difference in the behavior of these two variants?
+        
+        // answer => no there is no difference in the behavior of these two variants.because if age is greater than 18 then it's return true and function execution is stop and the control of program is go to the calling line so the line 25 does not work.
+    </script>
+    
+</body>
+</html>

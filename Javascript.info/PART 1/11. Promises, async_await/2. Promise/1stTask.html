@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Task</title>
+</head>
+<body>
+
+    <script>
+        // question : What’s the output of the code below?
+        let promise = new Promise(function(resolve, reject) {
+            resolve(1);
+
+            setTimeout(() => resolve(2), 1000);
+        });
+
+        promise.then(alert);
+
+        // answer
+        // 1  because when first resolve or reject is tigger then promise is return them
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9th Task</title>
+</head>
+<body>
+
+    <script>
+        let loginWith = prompt("Enter login way", "");
+
+        if(loginWith == "Admin"){
+            let password = prompt("Enter the password", "");
+
+            if(password == "TheMaster"){
+                alert("Welcome");
+            }
+            else if(password == "" || password == null){
+                alert("Canceled");
+            }
+            else{
+                alert("Wrong password");
+            }
+        }
+        else if(loginWith == "" || loginWith == null){
+            alert("Canceled");
+        }
+        else{
+            alert("I don’t know you");
+        }
+    </script>
+    
+</body>
+</html>

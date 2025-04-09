@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Task</title>
+</head>
+<body>
+
+    <script>
+        function getMaxSubSum(arr){
+            let answer = 0;
+
+            /* for(let index=0; index<arr.length; index++){
+                let sum = 0;
+
+                for(let j=index; j<arr.length; j++){
+                    sum = sum + arr[j];
+                    if(sum > answer){
+                        answer = sum;
+                    }
+                }
+            } */
+
+            let sum = 0;
+            for(let index=0; index<arr.length; index++){
+
+                sum = sum + arr[index];
+
+                if(Math.max(sum, answer) > answer){
+                    answer = Math.max(arr[index]+sum, answer);
+                    sum = 0;
+                }
+            }
+
+            return answer;
+        }
+
+        /*
+        index = 1, 2+0=2 , 0 2 > 0 answer = 2 sum = 2
+        index = 2, 3+2=5 , 2 5 > 2 answer = 5 sum = 5
+        index = 3, -9+5=-4 , 5 5 > 2 answer = 5 sum = 5 + -9 = -4
+        
+        */
+
+
+        alert(getMaxSubSum([-1, 2, 3, -9])); // 5 (the sum of highlighted items)
+        alert(getMaxSubSum([2, -1, 2, 3, -9])); // 6
+        alert(getMaxSubSum([-1, 2, 3, -9, 11])); // 11
+        alert(getMaxSubSum([-2, -1, 1, 2])); // 3
+        alert(getMaxSubSum([100, -9, 2, -3, 5])); // 100
+        alert(getMaxSubSum([1, 2, 3])); // 6 (take all)
+
+        alert(getMaxSubSum([-1, -2, -3])); // 0
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Task</title>
+</head>
+<body>
+
+    <script>
+        function checkAge(age) {
+            if (age > 18) {
+                return true;
+            } else {
+                return confirm('Did parents allow you?');
+            }
+        }
+
+        // Rewrite it, to perform the same, but without if, in a single line.
+        // Make two variants of checkAge:
+        // 1. Using a question mark operator ?
+        function checkAge(age){
+            return (age > 18) ? true : confirm('Did parents allow you?');
+        }
+
+        // 2. Using OR ||
+        function checkAge(age){
+            return (age > 18) || confirm('Did parents allow you?');
+        }
+    </script>
+    
+</body>
+</html>

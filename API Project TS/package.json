@@ -1,0 +1,36 @@
+{
+  "name": "api-project-ts",
+  "version": "1.0.0",
+  "main": "./src/app.ts",
+  "scripts": {
+    "start": "nodemon --watch ./src --exec ts-node ./src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/connect-redis": "^0.0.23",
+    "@types/geoip-lite": "^1.4.4",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/moment-timezone": "^0.5.13",
+    "concurrently": "^9.1.0",
+    "connect-redis": "^8.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "geoip-lite": "^1.4.10",
+    "ioredis": "^5.4.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.5.46",
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.1",
+    "@types/ioredis": "^4.28.10",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
+  }
+}

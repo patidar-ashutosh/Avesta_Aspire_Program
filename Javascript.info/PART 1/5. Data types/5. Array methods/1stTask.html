@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Task</title>
+</head>
+<body>
+
+    <script>
+        function camelize(str){
+            // convert the string to array
+            let arrayOfStr = str.split("-");
+
+            // make word first character to uppercase
+            let ansArr = arrayOfStr.map( (item, index) => {
+                return index != 0 ? item[0].toUpperCase() + item.slice(1) : item;
+            })
+
+            // convert array to string
+            return ansArr.join("");
+        }
+
+        document.write(camelize("background-color") + "<br>"); // 'backgroundColor';
+        document.write(camelize("list-style-image") + "<br>"); // 'listStyleImage';
+        document.write(camelize("-webkit-transition")); // 'WebkitTransition';
+    </script>
+    
+</body>
+</html>

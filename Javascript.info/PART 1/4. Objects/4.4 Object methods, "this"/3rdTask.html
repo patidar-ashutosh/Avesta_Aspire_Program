@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Task</title>
+</head>
+<body>
+
+    <script>
+        // question
+        /* let ladder = {
+            step: 0,
+            up() {
+                this.step++;
+            },
+            down() {
+                this.step--;
+            },
+            showStep: function() { // shows the current step
+                alert( this.step );
+            }
+        };
+        Modify the code of up, down, and showStep to make the calls chainable, like this:
+        ladder.up().up().down().showStep().down().showStep(); */
+
+        // answer
+        // we just use this keyword
+        let ladder = {
+            step: 0,
+            up() {
+                this.step++;
+                return this;
+            },
+            down() {
+                this.step--;
+                return this;
+            },
+            showStep() {
+                alert( this.step );
+                return this;
+            }
+        };
+
+        ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Task</title>
+</head>
+<body>
+
+    <script>
+        alert( 1.35.toFixed(1) ); // 1.4
+
+        // question : In the similar example below, why is 6.35 rounded to 6.3, not 6.4?
+        alert( 6.35.toFixed(1) ); // 6.3
+
+        // How to round 6.35 the right way?
+
+        // answer
+        alert(Math.round(6.35 * 10 ) / 10); // 6.4
+    </script>
+    
+</body>
+</html>

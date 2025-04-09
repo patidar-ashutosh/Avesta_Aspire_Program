@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Pattern</title>
+</head>
+<body>
+
+    <script>
+        let n = 10;
+        let space = (n/2) - 1;
+
+        for(let i=1; i<n/2; i++){
+            // printing space
+            for(let j=1; j<=space; j++){
+                document.write("&nbsp &nbsp");
+            }
+            space--;
+
+            for(let k=1; k<=i; k++){
+                document.write("*&nbsp");
+            }
+
+            document.write("<br>");
+        }
+
+        for(let i=1; i<=n/2; i++){
+            document.write("*&nbsp");
+        }
+
+        document.write("<br>");
+
+        space = 1;
+
+        for(let i=(n/2)-1; i>=1; i--){
+            // printing space
+            for(let j=1; j<=space; j++){
+                document.write("&nbsp &nbsp");
+            }
+            space++;
+
+            for(let k=1; k<=i; k++){
+                document.write("*&nbsp");
+            }
+
+            document.write("<br>");
+        }
+    </script>
+    
+</body>
+</html>

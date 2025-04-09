@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Pattern</title>
+</head>
+<body>
+
+    <script>
+        let row = 5;
+        let col=row;
+
+        for(let i=1;i<=row;i++){
+            for(let j=1;j<=col;j++){
+                if(i==row||j==col||i==1||1==j){
+                    document.write("*&nbsp");
+                }else{
+                    document.write("&nbsp &nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+    </script>
+    
+</body>
+</html>

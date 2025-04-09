@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Task</title>
+</head>
+<body>
+
+    <script>
+        function readNumber(){
+            let dataEnter;
+            do{
+                dataEnter = +prompt("Enter a number");
+            } while(isNaN(dataEnter))
+
+            alert(dataEnter);
+
+            if(dataEnter == "" || dataEnter == null){
+                return null;
+            }
+
+            return dataEnter;
+        }
+
+        alert(`Output : ${readNumber()}`);
+    </script>
+    
+</body>
+</html>

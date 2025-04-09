@@ -1,0 +1,3 @@
+Hello, This file created using writeFileSyncThis is new data added
+This is new data added
+This is new data added

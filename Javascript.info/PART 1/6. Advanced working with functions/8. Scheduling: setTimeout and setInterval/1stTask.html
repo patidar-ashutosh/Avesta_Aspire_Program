@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Task</title>
+</head>
+<body>
+
+    <script>
+        function printNumbers(from, to) {
+            let timerId = setInterval(() => {
+                document.write(from + " ");
+                if(from == to){
+                    clearInterval(timerId);
+                }
+                from++;
+            }, 1000);
+        }
+
+        // printNumbers(1, 10);
+
+        document.write("<br>");
+
+        function printNumbers1(from, to) {
+            let timerId = setTimeout(function nest(){
+                document.write(from + " ");
+                if(from < to){
+                    setTimeout(nest, 1000);
+                }
+                from++;
+            } , 1000)
+        }
+
+        printNumbers1(1, 10);
+    </script>
+    
+</body>
+</html>

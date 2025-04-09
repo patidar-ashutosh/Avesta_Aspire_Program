@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Task</title>
+</head>
+<body>
+
+    <script>
+        function sumInput(){
+            let arr = [];
+
+            let input = prompt("Enter the numeric value to sum\nOr non-numeric value for exit!!", 0);
+            
+            while(!isNaN(input) && input != "" && input != null){
+                arr.push(+input);
+
+                input = prompt("Enter the numeric value to sum\nOr non-numeric value for exit!!", 0);
+            }
+
+            let sum = 0;
+            for(let values of arr){
+                sum = sum + values;
+            }
+
+            return sum;
+        }
+
+        alert(`sum is : ${sumInput()}`);
+    </script>
+    
+</body>
+</html>

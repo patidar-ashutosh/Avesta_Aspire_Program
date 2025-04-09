@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Pattern</title>
+</head>
+<body>
+
+    <script>
+        let n = 9;
+        let leftSpace = n/2;
+        let rightSpace = n/2;
+
+        for(let i=1; i<=n; i+=2){
+            // printing space
+            for(let j=1; j<=leftSpace; j++){
+                document.write("&nbsp &nbsp");
+            }
+            leftSpace--;
+
+            for(let k=1; k<=i; k++){
+                document.write("*&nbsp");
+            }
+
+            // printing space
+            for(let j=1; j<=rightSpace; j++){
+                document.write("&nbsp &nbsp");
+            }
+            rightSpace--;
+
+            document.write("<br>");
+        }
+
+        leftSpace = 1;
+        rightSpace = 2;
+
+        for(let i=n-2; i>=1; i-=2){
+            // printing space
+            for(let j=1; j<=leftSpace; j++){
+                document.write("&nbsp &nbsp");
+            }
+            leftSpace++;
+
+            for(let k=1; k<=i; k++){
+                document.write("*&nbsp");
+            }
+
+            // printing space
+            for(let j=1; j<=rightSpace; j++){
+                document.write("&nbsp &nbsp");
+            }
+            rightSpace++;
+
+            document.write("<br>");
+        }
+    </script>
+    
+</body>
+</html>

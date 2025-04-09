@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Task</title>
+</head>
+<body>
+
+    <script>
+        // question : Write a function checkSpam(str) that returns true if str contains ‘viagra’ or ‘XXX’, otherwise false.
+
+        // answer
+        function checkSpam(str){
+            str = str.toLowerCase();
+            
+            if(str.indexOf("viagra") != -1 || str.indexOf("xxx") != -1){
+                return true;
+            }
+
+            return false;
+        }
+
+        alert(checkSpam('buy ViAgRA now')); // true
+        alert(checkSpam('free xxxxx')); // true
+        alert(checkSpam("innocent rabbit")); // false
+    </script>
+    
+</body>
+</html>

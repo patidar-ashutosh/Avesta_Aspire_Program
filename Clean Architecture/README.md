@@ -3,6 +3,7 @@
 ## 🧠 Introduction
 
 Clean Architecture is a way to write software in **layers**, where:
+
 - Core business logic is **independent** of frameworks, DB, or APIs.
 - Code is **testable, maintainable, and scalable**.
 - Each part has a **single responsibility**.
@@ -16,37 +17,43 @@ Clean Architecture ke benefits kaafi powerful hote hain, especially jab ham long
 ---
 
 ### 🧠 1. **Separation of Concerns (SoC)**
-Har layer ka apna role hota hai —  
-- Business logic alag hoti hai  
-- Database access alag  
-- HTTP/web layer alag  
+
+Har layer ka apna role hota hai —
+
+- Business logic alag hoti hai
+- Database access alag
+- HTTP/web layer alag
 
 ➡️ Isse code zyada **readable, testable aur maintainable** ban jaata hai.
 
 ---
 
 ### 🧪 2. **Testability**
+
 Business logic (yaani domain layer) independent hoti hai kisi framework, DB ya web server se.
 
-➡️ Tum easily **unit testing** kar sakte ho bina kisi external dependency ke.
+➡️ Ham easily **unit testing** kar sakte hai bina kisi external dependency ke.
 
 ---
 
 ### 🔄 3. **Independent of Frameworks**
-Tumhara core business code kisi bhi framework se tightly coupled nahi hota.
+
+Hamara core business code kisi bhi framework se tightly coupled nahi hota hai.
 
 ➡️ Kal ko agar Express.js se NestJS pe switch karna ho, toh **core logic touch nahi karna padega**.
 
 ---
 
 ### 🔄 4. **Easier to Replace Technologies**
-Chaho toh SQL se NoSQL ya Redis se Kafka switch kar lo —  
 
-➡️ Tumhe bas outer layer ko update karna padega, core untouched rahega.
+Chaho toh SQL se NoSQL ya Redis se Kafka switch kar lo —
+
+➡️ Hame bas outer layer ko update karna padega, core untouched rahega.
 
 ---
 
 ### 🔒 5. **Security & Robustness**
+
 Har layer apna kaam karti hai. Jo cheez controller ko karni chahiye, woh controller hi karega. Business rules koi shortcut nahi lete.
 
 ➡️ Isse bugs aur **security loopholes kam hote hain**.
@@ -54,6 +61,7 @@ Har layer apna kaam karti hai. Jo cheez controller ko karni chahiye, woh control
 ---
 
 ### 📈 6. **Scalability**
+
 Architecture easily **scale** ho sakta hai horizontally (multiple teams), aur vertically (more features).
 
 ➡️ Teams parallelly kaam kar sakti hain bina ek dusre ke code ko todhe.
@@ -61,21 +69,25 @@ Architecture easily **scale** ho sakta hai horizontally (multiple teams), aur ve
 ---
 
 ### 👥 7. **Team Collaboration Friendly**
+
 Front-end, backend, DB, QA — sab apne apne zones mein kaam kar sakte hain without interfering with others.
 
 ---
 
 ### 🧩 8. **Plug-n-Play Components**
-Kal ko tumhe ek naya payment provider integrate karna ho, toh just usse plug karo — no impact on rest of the system.
+
+Kal ko hame ek naya payment provider integrate karna ho, toh just usse plug karna padega — no impact on rest of the system.
 
 ---
 
 ### 🛠️ 9. **Maintenance Cost Down**
+
 Code base bada ho jaaye tab bhi changes **easily track aur manage** ho jaate hain.
 
 ---
 
 ### 🔄 10. **Business Logic Reusability**
+
 Agar ham CLI app, web app aur background worker team ke alag modules bana rahe hai, toh sab mein ek hi domain logic reuse kar sakte hai.
 
 ---
@@ -96,18 +108,17 @@ Ye ek onion (pyaz) jaisa structure hota hai, jismein alag-alag layers hoti hain:
     +---------------------+
 ```
 
-
 ## 🔁 Core Concepts
 
-| Concept       | Explanation |
-|---------------|-------------|
-| **Entity**    | Main object of your business logic (e.g. User) |
-| **Use Case**  | Application-specific logic (e.g. CreateUserUseCase) |
-| **Repository**| Interface to connect to database/storage |
-| **Controller**| Entry point for request (HTTP) |
-| **DTO**       | Data Transfer Object - sanitized request/response |
-| **Mapper**    | Converts between domain ↔ DTO/ORM |
-| **Domain Layer**| Complete business rules (entities, value objects, services) |
+| Concept          | Explanation                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| **Entity**       | Main object of your business logic (e.g. User)              |
+| **Use Case**     | Application-specific logic (e.g. CreateUserUseCase)         |
+| **Repository**   | Interface to connect to database/storage                    |
+| **Controller**   | Entry point for request (HTTP)                              |
+| **DTO**          | Data Transfer Object - sanitized request/response           |
+| **Mapper**       | Converts between domain ↔ DTO/ORM                           |
+| **Domain Layer** | Complete business rules (entities, value objects, services) |
 
 ---
 
@@ -140,7 +151,8 @@ src/
 ## 📁 `modules/` Folder — **Feature-based Code**
 
 ### 🔥 Ye kya hota hai?
-- Ye folder tumhare **app ke features** ya **domains** ko represent karta hai.
+
+- Ye folder hamare **app ke features** ya **domains** ko represent karta hai.
 - Har feature (like User, Product, Order, etc.) ka apna ek chhota sa **Clean Architecture** setup hota hai.
 
 ### 📦 Inside `modules/`, har feature ka structure ho sakta hai:
@@ -156,6 +168,7 @@ modules/
 ```
 
 ### ✅ Fayda?
+
 - Code **modular** hota hai — ek module update karne se doosre pe koi asar nahi.
 - Har feature ka **own clean architecture** hota hai.
 
@@ -164,6 +177,7 @@ modules/
 ## 📁 `shared/` Folder — **Common Utilities / Base Code**
 
 ### 🔧 Ye kya hota hai?
+
 - Wo saari cheezein jo multiple modules mein **reuse** ho sakti hain, unhe yahan rakha jata hai.
 
 ### 🔄 Typical cheezein jo `shared/` mein hoti hain:
@@ -178,17 +192,18 @@ shared/
 ```
 
 ### ✅ Fayda?
+
 - Reusability high hoti hai.
 - DRY (Don't Repeat Yourself) principle follow hota hai.
 - Common logic ek jagah likha jata hai, har module mein duplicate nahi hota.
-
 
 ---
 
 ## 🧱 Important Layers with Examples
 
-### 1. 🧍 Entity / Domain Layer  (Core Models)
-- Ye tumhare **business rules** hote hain.
+### 1. 🧍 Entity / Domain Layer (Core Models)
+
+- Ye hamare **business rules** hote hain.
 - Pure logic hota hai — bina kisi database, HTTP, ya third-party dependency ke.
 - Example: `User`, `Order`, `Product`, etc. ka core validation.
 
@@ -204,11 +219,12 @@ export class User {
 }
 ```
 
-➡️ Is layer me tumhara **business ka core object** hota hai. Yeh kisi bhi framework (jaise Express, DB) se independent hota hai.
+➡️ Is layer me hamara **business ka core object** hota hai. Yeh kisi bhi framework (jaise Express, DB) se independent hota hai.
 
 ---
 
 ### 2. 🧠 Use Case Layer / Interactors (Business Logic)
+
 - Business rules ko **execute** karne wali logic hoti hai.
 - Ye decide karte hain kya hona chahiye — like "create user", "place order", etc.
 
@@ -239,8 +255,9 @@ export class CreateUserUseCase {
 ---
 
 ### 3. 📥 Controller Layer / Interface Adapters (Request Handler)
+
 - Ye **conversion layer** hoti hai — data ko use case se controller tak convert karti hai.
-- Yahi pe tumhara controller ya presenter hoga jo request-response handle karega.
+- Yahi pe hamara controller ya presenter hoga jo request-response handle karega.
 
 Location: `modules/user/controllers/create-user.controller.ts`
 
@@ -263,6 +280,7 @@ export class CreateUserController {
 ---
 
 ### 4. 💾 Frameworks & Drivers / Repository Layer (Abstraction of DB)
+
 - Ye sab external cheezein hoti hain — jaise Express.js, MongoDB, PostgreSQL.
 - Inhe andar ke logic pe koi effect nahi daalna chahiye.
 
@@ -282,6 +300,7 @@ export interface IUserRepository {
 ---
 
 ### 5. 🔀 Mapper Layer (Convert Between Models)
+
 Location: `modules/user/mappers/UserMap.ts`
 
 ```ts
@@ -306,9 +325,11 @@ export class UserMap {
 ---
 
 ### 6. 🧱 Domain Layer (Entities + Value Objects + Services)
+
 Location: `modules/user/domain/`
 
 Structure:
+
 ```
 modules/user/domain/
 ├── entities/
@@ -319,7 +340,7 @@ modules/user/domain/
 │   └── PasswordEncryptor.ts
 ```
 
-➡️ Ye poora folder tumhara **pure business rules** contain karta hai.
+➡️ Ye poora folder hamara **pure business rules** contain karta hai.
 
 ---
 
@@ -375,18 +396,18 @@ src/
 
 ## 🔍 Short Explanation of Important Files
 
-| File/Folder                  | Role |
-|-----------------------------|------|
-| `User.ts`                   | Entity with validation logic |
-| `CreateUserUseCase.ts`      | Handles business logic like creating a user |
-| `CreateUserController.ts`   | Reads request, calls use case, sends response |
-| `UserRepositoryMongo.ts`    | Talks to MongoDB to save/fetch user |
-| `AppError.ts`               | Custom error to throw meaningful messages |
-| `Logger.ts`                 | A shared logging service |
-| `env.ts`                    | Loads `.env` variables safely |
-| `database.ts`               | MongoDB/Postgres connection logic |
-| `app.ts`                    | Sets up Express middlewares |
-| `server.ts`                 | Starts the server on a port |
+| File/Folder               | Role                                          |
+| ------------------------- | --------------------------------------------- |
+| `User.ts`                 | Entity with validation logic                  |
+| `CreateUserUseCase.ts`    | Handles business logic like creating a user   |
+| `CreateUserController.ts` | Reads request, calls use case, sends response |
+| `UserRepositoryMongo.ts`  | Talks to MongoDB to save/fetch user           |
+| `AppError.ts`             | Custom error to throw meaningful messages     |
+| `Logger.ts`               | A shared logging service                      |
+| `env.ts`                  | Loads `.env` variables safely                 |
+| `database.ts`             | MongoDB/Postgres connection logic             |
+| `app.ts`                  | Sets up Express middlewares                   |
+| `server.ts`               | Starts the server on a port                   |
 
 ---
 
@@ -413,7 +434,7 @@ src/
 ## 🧠 Tips for Clean Code
 
 - Har ek folder sirf ek responsibility rakhe
-- Entity me kabhi DB ka naam mat lo (e.g. `_id`, `createdAt`) 
+- Entity me kabhi DB ka naam mat lo (e.g. `_id`, `createdAt`)
 - Use Case should not return raw DB models
 - Controller should be thin - zyada logic use case me ho
 - Mapper use karo for domain ↔ persistence mapping
@@ -421,10 +442,11 @@ src/
 ---
 
 ## ✅ Conclusion
+
 Clean & Scalable architecture bana ne ke liye ham ye roadmap ko har naye feature mein apply kar sakte hai. Jisme hame har module ke liye bas ye layers banani padegi:
+
 - controller
 - use-case
 - entity
 - repository
 - mapper (if needed)
-

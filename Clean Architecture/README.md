@@ -40,7 +40,7 @@ Business logic (yaani domain layer) independent hoti hai kisi framework, DB ya w
 
 Hamara core business code kisi bhi framework se tightly coupled nahi hota hai.
 
-➡️ Kal ko agar Express.js se NestJS pe switch karna ho, toh **core logic touch nahi karna padega**.
+➡️ Kal ko agar Express.js se NextJS pe switch karna ho, toh **core logic touch nahi karna padega**.
 
 ---
 
@@ -340,7 +340,7 @@ modules/user/domain/
 │   └── PasswordEncryptor.ts
 ```
 
-➡️ Ye poora folder hamara **pure business rules** contain karta hai.
+➡️ Ye poora folder hamare **pure business rules** ko contain karta hai.
 
 ---
 
